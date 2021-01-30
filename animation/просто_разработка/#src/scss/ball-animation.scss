@@ -1,0 +1,71 @@
+$size: 20px;
+$distance: 30px;
+
+$speed: 3s;
+$animation: ease-out;
+$delay: 0s;
+
+.ball__wrapper {
+  max-width: 100px;
+  padding: 50px;
+  background-color: #0001;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ball {
+  width: $size;
+  height: $size;
+  border-radius: $size;
+  position: absolute;
+}
+
+.ball.ball-1 {
+  background-color: red;
+  animation: $speed $animation $delay infinite ball-1;
+}
+
+.ball.ball-2 {
+  background-color: green;
+  animation: $speed $animation $delay infinite ball-2;
+}
+
+.ball.ball-3 {
+  background-color: blue;
+  animation: $speed $animation $delay infinite ball-3;
+}
+
+.ball.ball-4 {
+  background-color: orange;
+  animation: $speed $animation $delay infinite ball-4;
+}
+
+@keyframes ball-1 {
+  0%,100% { transform: translate(0, 0)}
+  25% { transform: translate(0, -$distance)}
+  50% { transform: translate($distance, 0)}
+  75% { transform: translate(-$distance, 0)}
+}
+
+@keyframes ball-2 {
+    0%,100% { transform: translate(0, 0)}
+    25% { transform: translate($distance,0)}
+    50% { transform: translate(0,$distance)}
+    75% { transform: translate(0,-$distance)}
+}
+
+@keyframes ball-3 {
+    0%,100% { transform: translate(0,0)}
+    25% { transform: translate(0, $distance)}
+    50% { transform: translate(-$distance, 0)}
+    75% { transform: translate($distance, 0)}
+}
+
+@keyframes ball-4 {
+    0%,100% { transform: translate(0, 0)}
+    25% { transform: translate(-$distance,0)}
+    50% { transform: translate(0,-$distance)}
+    75% { transform: translate(0,$distance)}
+}

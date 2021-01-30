@@ -1,0 +1,75 @@
+body {
+    background-color: #0008;
+}
+
+.wrapper {
+    background-color: #0001;
+}
+
+.content {
+    padding: 50px;
+}
+
+/* Остановка при наведении */
+.content:hover .content__circle {
+    animation-play-state: paused;
+}
+
+.content__circle {
+    width: 100px;
+    height: 100px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    position: relative;
+
+    /* Имя которую мы будем использовать */
+    animation-name: name-animation, name-animation-red;
+    /* Время продолжительности анимации */
+    animation-duration: 3s;
+    /* Сценарий развития анимации между ключевыми кадрами */
+    animation-timing-function: ease linear;
+    /* Количество повторов ключевых кадров */
+    animation-iteration-count: infinite;
+    /* Тип и направление проигрывания ключевых кадров */
+    animation-direction: alternate;
+    /* Запускает или приостанавливает анимацию по определенному событию */
+    animation-play-state: running;
+    /* Задержка перед анимацией */
+    animation-delay: 3s;
+    /* Значения после окончания анимации */
+    animation-fill-mode: forwards;
+
+    /** Короткая запись */
+    /* animation: name-animation 3s linear 3s infinite alternate, name-animation-red 3s linear 3s infinite alternate; */
+}
+
+/* Ключевые кадры */
+@keyframes name-animation {
+
+    /* Начальная позиция анимации */
+    0% {
+        left: 0;
+    }
+
+    50% {
+        border-radius: 0;
+    }
+
+    /* Конечная позиция анимации */
+    100% {
+        left: 500px;
+    }
+}
+
+@keyframes name-animation-red {
+
+    /* Начальная позиция анимации */
+    0% {
+        background-color: #ffffff;
+    }
+
+    /* Конечная позиция анимации */
+    100% {
+        background-color: red
+    }
+}
